@@ -42,7 +42,7 @@ public class Statistics {
         int sum = 0;
         for (j = 0; j < n; j++) {
             sum += ints[j];
-            if (j + 1 == n) {
+            if (j == n - 1) {
                 System.out.printf("Summe: %d%n", sum);
             }
         }
@@ -80,8 +80,9 @@ public class Statistics {
             j++;
             k = 1;
         }
-        if (ints[n-2] != ints[n-1]) {
+        if (n > 1 && ints[n-2] != ints[n-1]) {
             System.out.println(ints[n - 1] + ": *");
         }
+        if (n == 1) System.out.println(ints[0] + ": *");
     }
 }
