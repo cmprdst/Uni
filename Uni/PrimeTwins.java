@@ -11,7 +11,6 @@ public class PrimeTwins {
       while (i < j && a % primes[i] != 0) i++;
       if (i == j) primes[j++] = a;
     }
-    System.out.println(Arrays.toString(primes));
     // Matrix mit Primzahlzwillingen füllen
     int k = 0;
 
