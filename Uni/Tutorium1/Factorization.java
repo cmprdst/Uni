@@ -1,3 +1,5 @@
+package Tutorium1;
+
 public class Factorization {
     public static void main(String[] args) {
 
@@ -25,7 +27,7 @@ public class Factorization {
             }
             if (k != 0 && n > 1) {
                 System.out.print(primes[i] + "^" + k + " * ");
-            } else if (n == 1) { // Ende der Division erreicht → Schlussklausel
+            } else if (n == 1) { // Ende der Übung0.Division erreicht → Schlussklausel
                 System.out.printf(primes [i] + "^" + k + "%n");
                 break;
             }

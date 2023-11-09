@@ -1,3 +1,5 @@
+package Übung2;
+
 public class DecimalToDual {
 //---------------------------------------------------------------------------//
   public static String transformDual(int dec) {

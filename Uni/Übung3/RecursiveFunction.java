@@ -1,3 +1,5 @@
+package Übung3;
+
 /**************************************
  x = -3, y = -2 / x = 3, y = -2 → Algorithmus terminiert (allgemein für y < 0) nicht
  x = -3, y = 2 → y = 0 → x = -5 (wenn x < 0 → x < y)

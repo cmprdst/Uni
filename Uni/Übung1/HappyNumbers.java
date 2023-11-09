@@ -1,3 +1,5 @@
+package Übung1;
+
 public class HappyNumbers {
     public static boolean isHappy(int n) {
         int digitSum = 0;

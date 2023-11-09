@@ -1,3 +1,5 @@
+package Übung0;
+
 import java.util.Scanner;
 
 public class Division {
@@ -12,15 +14,15 @@ public class Division {
         int rest;
         int times_subtracted;
         if (y == 0) {
-            System.out.print("Die Division durch 0 ist nicht definiert.");
+            System.out.print("Die Übung0.Division durch 0 ist nicht definiert.");
         } else if (x == 0) {
             System.out.print("Das Ergebnis ist 0.");
         } else if (x < y && x > 0) {
             rest = x;
-            System.out.printf("Die Division von %d durch %d ergibt 0 mit einem Rest von %d.", x, y, rest);
+            System.out.printf("Die Übung0.Division von %d durch %d ergibt 0 mit einem Rest von %d.", x, y, rest);
         } else if (y < x && x < 0) {
             rest = -x;
-            System.out.printf("Die Division von %d durch %d ergibt 0 mit einem Rest von %d.", x, y, rest);
+            System.out.printf("Die Übung0.Division von %d durch %d ergibt 0 mit einem Rest von %d.", x, y, rest);
         } else {
             if (x < 0 && y < 0) {
                 x = -x;
@@ -42,10 +44,10 @@ public class Division {
                 times_subtracted++;
             }
             if (x_initial > 0 && y_initial > 0 || x_initial < 0 && y_initial < 0) {
-                System.out.printf("Das Ergebnis der Division von %d durch %d lautet %d mit einem Rest von %d.", x_initial, y_initial, times_subtracted, rest);
+                System.out.printf("Das Ergebnis der Übung0.Division von %d durch %d lautet %d mit einem Rest von %d.", x_initial, y_initial, times_subtracted, rest);
             } else {
                 times_subtracted = -times_subtracted;
-                System.out.printf("Das Ergebnis der Division von %d durch %d lautet %d mit einem Rest von %d.", x_initial, y_initial, times_subtracted, rest);
+                System.out.printf("Das Ergebnis der Übung0.Division von %d durch %d lautet %d mit einem Rest von %d.", x_initial, y_initial, times_subtracted, rest);
             }
         }
     }

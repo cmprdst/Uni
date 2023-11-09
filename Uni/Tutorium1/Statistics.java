@@ -1,3 +1,5 @@
+package Tutorium1;
+
 public class Statistics {
 
     public static double sqrt(double x) {

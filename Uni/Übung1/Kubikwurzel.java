@@ -1,3 +1,5 @@
+package Übung1;
+
 public class Kubikwurzel {
     public static void main(String[] args) {
         double volume = 10.123;
@@ -8,6 +10,6 @@ public class Kubikwurzel {
             b = a;
             c = volume / (a * b);
         }
-        System.out.printf("Die Kubikwurzel aus %f beträgt ca. %f", volume, a);
+        System.out.printf("Die Übung1.Kubikwurzel aus %f beträgt ca. %f", volume, a);
     }
 }
