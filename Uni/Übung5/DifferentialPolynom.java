@@ -6,9 +6,9 @@ public class DifferentialPolynom {
    public static double[] diffPoly(double[] coeffs) {
 
       try {
-         double[] deriv = new double[coeffs.length - 1];
-
          if (coeffs.length == 1) return new double[0];
+
+         double[] deriv = new double[coeffs.length - 1];
 
          for (int i = 0; i < deriv.length; i++) {
             deriv[i] = coeffs[i + 1] * (i + 1);
