@@ -13,6 +13,7 @@ public class Food implements Comparable<Food> {
     public Food(String type, int calories) {
         try {
             int i = 0;
+
             while (!type.equals(TYPES[i])) { // Falls keine Übereinstimmung gefunden, OutOfBoundsException "hervorrufen"
                 i++;
             }
@@ -37,6 +38,7 @@ public class Food implements Comparable<Food> {
     public static Food[] createSortedRandomList(int n) {
         try {
             Food[] randomFoods = new Food[n];
+
             for (int i = 0; i < randomFoods.length; i++) {
                 // zufälliger Typ aus Indizes 0 bis TYPES.length - 1, da Math.random von 0 bis 1 (jeweils exklusiv)
                 String randomType = TYPES[(int) (TYPES.length * Math.random())]; // Abrundung durch explizites (int)
