@@ -1,4 +1,4 @@
-package Übung5;
+package Uebung5;
 
 public class Clock {
    private int h;

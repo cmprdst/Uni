@@ -1,4 +1,4 @@
-package Übung3;
+package Uebung3;
 
 /**************************************
  x = -3, y = -2 / x = 3, y = -2 → Algorithmus terminiert (allgemein für y < 0) nicht

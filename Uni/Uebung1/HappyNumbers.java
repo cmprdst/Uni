@@ -1,4 +1,4 @@
-package Übung1;
+package Uebung1;
 
 public class HappyNumbers {
     public static boolean isHappy(int n) {

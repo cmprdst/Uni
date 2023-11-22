@@ -1,4 +1,4 @@
-package Übung2;// import java.util.Arrays; - Kontrolle
+package Uebung2;// import java.util.Arrays; - Kontrolle
 
 public class MedianOfThree {
 //---------------------------------------------------------------------------//

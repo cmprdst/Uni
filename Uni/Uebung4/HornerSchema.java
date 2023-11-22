@@ -1,4 +1,4 @@
-package Übung4;
+package Uebung4;
 
 public class HornerSchema {
 //---------------------------------------------------------------------------//

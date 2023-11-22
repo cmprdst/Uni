@@ -1,4 +1,4 @@
-package Übung2;
+package Uebung2;
 
 public class DecimalToDual {
 //---------------------------------------------------------------------------//

@@ -1,4 +1,4 @@
-package Übung1;
+package Uebung1;
 
 public class Kubikwurzel {
     public static void main(String[] args) {
