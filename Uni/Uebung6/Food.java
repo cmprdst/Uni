@@ -55,6 +55,18 @@ public class Food implements Comparable<Food> {
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(createSortedRandomList(20)));
+        System.out.println(Arrays.toString(createSortedRandomList(10)));
+
+        Food apple = new Food("Apple", 100);
+        Food pear = new Food("Pear", 120);
+        Food cookie = new Food("Cookie", 80);
+        Food grape = new Food("Grape", 60);
+
+        Food banana = new Food("Banana", 140);
+
+        System.out.println(apple.compareTo(pear));
+        System.out.println(pear.compareTo(cookie));
+        System.out.println(cookie.compareTo(grape));
+        System.out.println(grape.compareTo(apple));
     }
 }
