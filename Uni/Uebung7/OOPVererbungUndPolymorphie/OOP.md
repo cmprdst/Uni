@@ -28,6 +28,9 @@ Durch das Überladen ist es möglich, andere Inputparameter zu erlauben wie bspw
 Methode "move(String s)" durch die andere, nicht abstrakte Methode "move(int x)" überladen wird, wodurch die
 Anwendungsmöglichkeiten und Funktionen einer Methode erweitert werden können.
 
+Zusammenfassend bezeichnen Überladung und Überschreibung die zwei Hauptarten von Polymorphie, der Vielseitigkeit der
+Objektdarstellung in der objektorientierten Programmierung.
+
 1. ✔ Aus der abstrakten Superklasse "Animal" wird ein neues Objekt aus der Klasse "Fish" namens "shark" instanziiert.
 2. ❌Aus der Klasse "Animal" kann kein neues Objekt direkt instanziiert werden, sonst wäre die Abstraktheit verletzt.
 3. ✔ Aus der Klasse "RoadRunner" wird ein neues Objekt namens "coyote" instanziiert.
