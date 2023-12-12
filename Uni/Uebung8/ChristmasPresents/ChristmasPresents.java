@@ -24,5 +24,6 @@ public class ChristmasPresents {
 		System.out.println(ComputerGame1.computePaperSize() + "m², " + ComputerGame1.computePaperSize() * price + "€");
 		System.out.println(ComputerGame2.computePaperSize() + "m², " + ComputerGame2.computePaperSize() * price + "€");
 		System.out.println(ComputerGame3.computePaperSize() + "m², " + ComputerGame3.computePaperSize() * price + "€");
+		System.out.println(Present.getCounter());
 	}
 }
