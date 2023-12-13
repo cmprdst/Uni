@@ -66,9 +66,9 @@ public class TernarySearch {
     /*
     Nachtrag aus der Übung:
 
-    Aufwand binäre Suche: 2 * log2n (2 Vergleiche)
-    Aufwand ternäre Suche: 4 * log3n (4 Vergleiche)
-    --> 2 * log2n < 4 * log3n
+    Aufwand binäre Suche: 2 * log2n (2 Vergleiche * Anzahl an Teilungen von n bis n = 1)
+    Aufwand ternäre Suche: 4 * log3n (4 Vergleiche * Anzahl an Teilungen von n bis n = 1)
+    --> 2 * log2n < 4 * log3n --> binäre Suche effizienter
      */
   }
 }
