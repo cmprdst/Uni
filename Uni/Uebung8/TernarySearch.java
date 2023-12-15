@@ -62,5 +62,13 @@ public class TernarySearch {
       der Theorie besser, aufgrund ihrer Einfachheit kann es jedoch trotzdem von Vorteil sein, auf die binäre Suche
       zurückzugreifen, außerdem fällt der Unterschied insbesondere für kleine Arrays eher gering aus.
      */
+
+    /*
+    Nachtrag aus der Übung:
+
+    Aufwand binäre Suche: 2 * log2n (2 Vergleiche * Anzahl an Teilungen von n bis n = 1)
+    Aufwand ternäre Suche: 4 * log3n (4 Vergleiche * Anzahl an Teilungen von n bis n = 1)
+    --> 2 * log2n < 4 * log3n --> binäre Suche effizienter
+     */
   }
 }
