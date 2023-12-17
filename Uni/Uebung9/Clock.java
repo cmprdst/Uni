@@ -1,10 +1,10 @@
 package Uebung9;
+
 /*
-
  Aus Aufgabe übernommen
-
  */
-public class Clock {
+
+public class Clock implements Comparable<Clock> {
 	private int h; // Stunden (0-23)
 	private int min; // Minuten (0-59)
 	private int gmin; // gesamt-Minuten
@@ -56,4 +56,7 @@ public class Clock {
 		erg += min;
 		return erg;
 	}
+
+	// nicht gegeben
+	public int compareTo(Clock other) { return Integer.compare(this.gmin, other.gmin); }
 }

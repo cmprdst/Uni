@@ -1,7 +1,9 @@
 package Uebung9;
 
+import java.util.Arrays;
+
 /**
- a = {5, 3, 4, 8, 7, 1, 2} <p>
+ a = {5, 3, 4, 8, 7, 1, 2} (Sortierung nach Algorithmus aus Vorlesung) <p>
  <p>
  <i>1. Wähle ein Pivotelement (bspw. den letzten Wert) → p = 2 </i><p>
  <i>2. Durchsuche das Array von links, sodass a[i] > p </i><p>
@@ -40,11 +42,71 @@ package Uebung9;
  a = {.1., .2., .3., .4., 5, *5*, .8.} // a[i] = (nicht fester) letzter Wert <p>
  a = {.1., .2., .3., .4., 5, 7, .8.} // (nicht fester) letzter Wert = altes a[i] > p <p>
  <p>
- <b> a = {1, 2, 3, 4, 5, 7, 8} </b> // Quicksort abgeschlossen
+ <b> a = {1, 2, 3, 4, 5, 7, 8} </b> // Quicksort abgeschlossen <p>
+ <p>
+ <p>
+ Quicksort gehört im mittleren Fall zur Komplexitätsklasse O(logn), da das Array nach jeder Pivotelementwahl ungefähr
+ halbiert wird (log₂n). Die Wahl des Pivotelements hat großen Einfluss auf die Anzahl der Vergleiche, da im besten Fall
+ das Array immer genau in der Mitte zerteilt und im schlechtesten Fall nur um eine Stelle kleiner wird.
+ <p>
+ Ein Extremfall wäre folgendes Szenario, bei dem das Pivotelement immer der letzte freie Wert ist:
+ <p>
+ a = {7, 6, 4, 5, 3, 2, 1}, <p>
+ a = {.1., 6, 4, 5, 3, 2, 7} <p>
+ a = {.1., 6, 4, 5, 3, 7, 2} <p>
+ a = {.1., 6, 4, 5, 3, 2, .7.} <p>
+ a = {.1., .2., 4, 5, 3, 6, .7.} <p>
+ a = {.1., .2., 4, 5, 6, 3, .7.} <p>
+ a = {.1., .2., 4, 5, 3, .6., .7.} <p>
+ a = {.1., .2., .3., 5, 4, .6., .7.} <p>
+ a = {.1., .2., .3., .4., .5., .6., .7.}
+ <p>
+ Es wird mühselig nur ein Wert nach dem anderen korrekt einsortiert.
  */
-public class QuickSort {
-    public static <T extends Comparable<T>> void quickSort(T[] a) {
-        // TODO: quicksort-algorithm for generics
 
+/*
+ Quicksort-Algorithmus aus der Vorlesung
+ */
+
+public class QuickSort {
+    public static <T extends Comparable<T>> void quickSort(T[] a) { _quicksort(a, 0, a.length - 1); }
+
+    static  <T extends Comparable<T>> void _quicksort(T[] a, int l, int r) {
+        if (r > l) {
+            int m = partition(a, l, r);
+            _quicksort(a, l, m - 1);
+            _quicksort(a, m + 1, r);
+        }
+    }
+
+    static  <T extends Comparable<T>> int partition(T[] a, int l, int r) {
+        assert (l <= r);
+        T p = a[r], t;
+        int i = l - 1, j = r;
+        do {
+            do ++i; while (a[i].compareTo(p) < 0);
+            do --j; while (j > l && a[j].compareTo(p) > 0);
+            t = a[i];
+            a[i] = a[j];
+            a[j] = t;
+        } while (i < j);
+        a[j] = a[i];
+        a[i] = a[r];
+        a[r] = t;
+        return i;
+    }
+
+    public static void main(String[] args) {
+
+        Clock[] ClockArray = {
+                new Clock(17, 45), new Clock("20:32"), new Clock(3, 13), new Clock(656),
+                new Clock(23, 55), new Clock(7), new Clock(12, 24), new Clock("13:37")
+        };
+
+        System.out.println(Arrays.toString(ClockArray));
+
+        QuickSort.quickSort(ClockArray);
+
+        System.out.println(Arrays.toString(ClockArray));
     }
 }
