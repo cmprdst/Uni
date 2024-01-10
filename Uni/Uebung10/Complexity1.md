@@ -21,4 +21,4 @@ Fibonacci-Zahlen: iterativ O(n), rekursiv O(2^n)
 (e) for (int i = n/2; i < n; ++i); -> O(n)
 
 (f) for (int i = 0; i < n ; ++i)
-        for (int j = 1; j <= n*n; ++j); -> O(n²)
+        for (int j = 1; j <= n*n; ++j); -> O(n³)
