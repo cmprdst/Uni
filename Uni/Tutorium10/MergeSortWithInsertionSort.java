@@ -1,7 +1,5 @@
 package Tutorium10;
 
-import java.util.Arrays;
-
 public class MergeSortWithInsertionSort {
     public static int[] SortArray(int[] unsorted) { return checkArray(unsorted); }
 
@@ -22,10 +20,10 @@ public class MergeSortWithInsertionSort {
         int[] rightCopy = new int[rightLength];
         for (int j = 0; j < rightLength; j++) rightCopy[j] = checked[j + leftLength];
 
-        if (leftCopy.length > 22) leftCopy = mergeSort(leftCopy);
+        if (leftCopy.length > 23) leftCopy = mergeSort(leftCopy);
         else insertionSort(leftCopy);
 
-        if (rightCopy.length > 22) rightCopy = mergeSort(rightCopy); // sort
+        if (rightCopy.length > 23) rightCopy = mergeSort(rightCopy);
         else insertionSort(rightCopy);
 
         return merge(leftCopy, rightCopy, checked);
@@ -56,25 +54,25 @@ public class MergeSortWithInsertionSort {
         }
     }
 
-    static long time = 0;
-
     public static void main(String[] args) {
-        for (int j = 0; j < 10000; j++) {
-            int[] example = new int[10000];
-            for (int i = 0; i < example.length; i++) example[i] = (int) (10000 * Math.random());
+        long time = 0;
+
+        for (int j = 0; j < 20000; j++) {
+            int[] example = new int[20000];
+
+            for (int i = 0; i < example.length; i++) example[i] = (int) (20000 * Math.random());
 
             long start = System.nanoTime();
             SortArray(example);
             long end = System.nanoTime();
             time += end - start;
         }
-
-        System.out.println(time /= 10000);
-        // Zeit für Schwellenwert = 22: 2274202
-        // Zeit für Schwellenwert = 23: 2892950
-        // Zeit für Schwellenwert = 24: 2983862
-        // Zeit für Schwellenwert = 25: 2056938
-        // Zeit für Schwellenwert = 26: 2048474
-        // Zeit für Schwellenwert = 27: 2821451
+        System.out.println(time / 20000);
+        // Zeit für Schwellenwert = 22: ~1395247
+        // Zeit für Schwellenwert = 23: ~1316608 ✔
+        // Zeit für Schwellenwert = 24: ~1386852
+        // Zeit für Schwellenwert = 25: ~1394606
+        // Zeit für Schwellenwert = 26: ~1388114
+        // Zeit für Schwellenwert = 27: ~1399882
     }
 }
