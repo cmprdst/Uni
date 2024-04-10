@@ -11,7 +11,7 @@ public class Palindrome {
     Stack<Character> baseText = new Stack<>();
     Stack<Character> reversedText = new Stack<>();
 
-    // String ohne Leer-, Sonder- und Satzzeichen als Kleinbuchstaben in Uebung1.PalindromeStack.Stack überführen
+    // String ohne Leer-, Sonder- und Satzzeichen als Kleinbuchstaben in Stack überführen
     for (int i = 0; i < text.length(); i++) {
       for (char lowerCaseLetter : lowerCaseLetters) {
         if (text.toLowerCase().charAt(i) == lowerCaseLetter) { baseText.push(text.toLowerCase().charAt(i)); break; }
@@ -20,14 +20,14 @@ public class Palindrome {
 
     if (baseText.is_empty()) { System.out.println("No valid characters (letters) were found."); return false; }
 
-    // String umgekehrt in Uebung1.PalindromeStack.Stack überführen
+    // String umgekehrt in Stack überführen
     for (int i = text.length() - 1; i >= 0; i--) {
       for (char lowerCaseLetter : lowerCaseLetters) {
         if (text.toLowerCase().charAt(i) == lowerCaseLetter) { reversedText.push(text.toLowerCase().charAt(i)); break; }
       }
     }
 
-    // Vergleich des letzten chars beider Stacks, falls gleich Entfernung und Wiederholung bis Uebung1.PalindromeStack.Stack leer, sonst Abbruch
+    // Vergleich des letzten chars beider Stacks, falls gleich Entfernung und Wiederholung bis Stack leer, sonst Abbruch
     while (!baseText.is_empty() && baseText.top().equals(reversedText.top())) { baseText.pop(); reversedText.pop(); }
     return baseText.is_empty();
   }
