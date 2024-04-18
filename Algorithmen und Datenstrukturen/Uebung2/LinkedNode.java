@@ -17,6 +17,10 @@ public class LinkedNode<T> {
   public void setData(T data) { data_ = data; }
   public void setNext(LinkedNode<T> next) { next_ = next; }
 
+  public void insert(T data, int place) {
+
+  }
+
   @Override
   public String toString() {
     String nodes = "";
