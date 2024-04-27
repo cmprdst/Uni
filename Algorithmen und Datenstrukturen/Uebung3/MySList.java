@@ -62,17 +62,18 @@ public class MySList implements Iterable<Integer> {
 
     while (current.next_ != null) current = current.next_;
 
-    return current.data_;
+    return check(current).data_;
   }
 
   public int atIndex(int i) {
-    if (i >= size()) { System.err.println("Cannot return a value as Node in question is out of bounds."); return -1; }
+    if (i < 0) { System.err.println("Negative index is undefined."); return -1; }
+    else if (i >= size()) { System.err.println("Cannot return the value of a node that is out of bounds."); return -1; }
 
     Node current = head_; int counter = 0;
 
     while (counter < i) { current = current.next_; i++; }
 
-    return current.data_;
+    return check(current).data_;
   }
   public int atPlace(int i) { return atIndex(--i); }
 
@@ -88,28 +89,19 @@ public class MySList implements Iterable<Integer> {
     }
   }
 
-  public void insertValueAtIndex(int i, int value) {
+  public void insertValueAtIndex(int i, int value) { // "list[i] = value", old "list[i]" and rest get pushed back
     if (i < 0) System.err.println("Cannot insert at a negative position.");
     else if (i == 0) push_front(i);
-    else if (i >= size()) push_back(i);
+    else if (i >= size()) push_back(i); // index that is too large ensures simple push_back
     else {
       Node current = head_; int counter = 0;
 
       while (counter < i - 1) { current = current.next_; counter++; }
 
-      Node nodeAfterValue = current.next_;
-      current.next_ = new Node(value, nodeAfterValue);
+      check(current).next_ = new Node(value, current.next_); // current.next_ in new Node() is handled first
     }
   }
   public void insertValueAtPlace (int i, int value) { insertValueAtIndex(--i, value); }
-  public void insertValueAfterNode(Node node, int value) {
-    if (empty()) head_ = new Node(value);
-    else if (node == null) head_ = new Node(value, head_);
-    else {
-      Node nodeAfterValue = node.next_;
-      node.next_ = new Node(value, nodeAfterValue);
-    }
-  }
 
   public void pop_front() {
     if (empty()) System.err.println("Cannot remove from an empty list.");
@@ -129,7 +121,7 @@ public class MySList implements Iterable<Integer> {
   public void removeValueAtIndex(int i) {
     if (i < 0) System.err.println("Cannot remove from a negative position.");
     else if (empty() || size() == 1 || i == 0) pop_front();
-    else if (i >= size() - 1) pop_back();
+    else if (i >= size() - 1) pop_back(); // condition ensures that i.e. size() == 2 && ∀i >= 1 simple pop_back suffices
     else {
       Node current = head_; int counter = 0;
 
@@ -170,11 +162,6 @@ public class MySList implements Iterable<Integer> {
 
     @Override
     public void remove() { throw new UnsupportedOperationException(); }
-
-//    @Override
-//    public boolean equals(Object other) { return node_ == ((Iterator) other).node_; }
-
-    public void insertAtIteratorPos(Iterator i, int value) { insertValueAfterNode(i.node_, value); }
   }
   //----------------------------------------------------------------//
   @Override
@@ -182,6 +169,8 @@ public class MySList implements Iterable<Integer> {
   //----------------------------------------------------------------//
   public static void main(String[] args) {
     MySList example = new MySList();
+    System.out.println(example.empty());
+
     example.push_back(85);
     example.push_back(72);
     example.push_back(93);
@@ -189,6 +178,7 @@ public class MySList implements Iterable<Integer> {
     example.push_back(74);
     example.push_back(42);
     System.out.println(example);
+    System.out.println(example.empty());
 
     MySList test = new MySList();
     for (int value : example) test.push_back(value);
