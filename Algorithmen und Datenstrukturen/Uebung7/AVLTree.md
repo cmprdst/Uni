@@ -14,6 +14,8 @@ auf ~log(n), was den nötigen Aufwand für die genannten Operationen signifikant
 2.
 Show what happens during the insertion of the numbers 14, 15, 17, 7, 5, 10 and 16 (in this order) into an AVL-Tree!
 
+"Balance-Faktor" = Höhe rechts - Höhe links (bspw. 14 - 15 - 17 -> 2 - 1 - 0, 7 - 14 - 15 - 17 -> 0 - -1 - -1 - 0)
+
 Fall 1: Links-Rechts (LR) |-(Rotation links (Rl))-> Links-Links (LL) |-(Rotation rechts (Rr))-> Ausgleich
 Fall 2: Rechts-Links (RL) |-(Rotation rechts (Rr))-> Rechts-Rechts (RR) |-(Rotation links (Rl))-> Ausgleich
 
