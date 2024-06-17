@@ -47,37 +47,37 @@ public class GraphSearchDemo {
   
   //----------------------------------------------------------------//
   public static void main(String[] args) {
-//    MyGraph bfsGraph = createGraph();
-//
-//    DotViewer bfsViewer = DotViewer.displayWindow(bfsGraph, "bfs viewer");
-//    bfsViewer.setExitOnClose();
-//
-//    BreadthFirstSearch bfs = new BreadthFirstSearch(bfsGraph);
-//
-//    bfs.singlestepper = new SingleStepper("bfs Stepper") {
-//      @Override
-//      protected void onHalt() { bfsViewer.display(bfsGraph); }
-//    };
-//
-//    bfs.singlestepper.halt("Begin bfs");
-//    bfs.start(bfsGraph.getSomeNode());
-//    bfs.singlestepper.halt("End bfs");
-//
-//
-//    MyGraph dfsGraph = createGraph();
-//
-//    DotViewer dfsViewer = DotViewer.displayWindow(dfsGraph, "dfs viewer");
-//    dfsViewer.setExitOnClose();
-//
-//    DepthFirstSearch dfs = new DepthFirstSearch(dfsGraph);
-//
-//    dfs.singlestepper = new SingleStepper("dfs Stepper") {
-//      @Override
-//      protected void onHalt() { dfsViewer.display(dfsGraph); }
-//    };
-//
-//    dfs.singlestepper.halt("Begin dfs");
-//    dfs.start(dfsGraph.getSomeNode());
-//    dfs.singlestepper.halt("End dfs");
+    MyGraph bfsGraph = createGraph();
+
+    DotViewer bfsViewer = DotViewer.displayWindow(bfsGraph, "bfs viewer");
+    bfsViewer.setExitOnClose();
+
+    BreadthFirstSearch bfs = new BreadthFirstSearch(bfsGraph);
+
+    bfs.singlestepper = new SingleStepper("bfs Stepper") {
+      @Override
+      protected void onHalt() { bfsViewer.display(bfsGraph); }
+    };
+
+    bfs.singlestepper.halt("Begin bfs");
+    bfs.start(bfsGraph.getSomeNode());
+    bfs.singlestepper.halt("End bfs");
+
+
+    MyGraph dfsGraph = createGraph();
+
+    DotViewer dfsViewer = DotViewer.displayWindow(dfsGraph, "dfs viewer");
+    dfsViewer.setExitOnClose();
+
+    DepthFirstSearch dfs = new DepthFirstSearch(dfsGraph);
+
+    dfs.singlestepper = new SingleStepper("dfs Stepper") {
+      @Override
+      protected void onHalt() { dfsViewer.display(dfsGraph); }
+    };
+
+    dfs.singlestepper.halt("Begin dfs");
+    dfs.start(dfsGraph.getSomeNode());
+    dfs.singlestepper.halt("End dfs");
   }
 }
